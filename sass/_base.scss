@@ -29,6 +29,8 @@ Grey dark 3: #999
   --grey-dark-1: #333;
   --grey-dark-2: #777;
   --grey-dark-3: #999;
+
+  --shadow-dark: 0 2rem 6rem rgba(0,0,0,.3);
 }
 
 * {
@@ -51,6 +53,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
   line-height: 1.6;
+  color: var(--grey-dark-2);
   background-image: linear-gradient(to right bottom, var(--primary-light), var(--primary-dark));
   background-size: cover;
   background-repeat: no-repeat;
