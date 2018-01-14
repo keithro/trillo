@@ -5,33 +5,94 @@
   box-shadow: var(--shadow-dark);
 
   min-height: 50rem; // for dev only delete
+
+  @media only screen and (max-width: $bp-largest) {
+    margin: 0;
+    max-width: 100%; // to fix it shrinking at next breakpoint
+    width: 100%; // to fix it shrinking at next breakpoint
+  }
 }
 
 .header {
   font-size: 1.4rem;
   height: 7rem;
   background-color: #fff;
-  border-bottom: var(--grey-light-2);
-
+  border-bottom: var(--line);
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+    @media only screen and (max-width: $bp-smallest) {
+      flex-wrap: wrap;
+      align-content: space-around;
+      height: 11rem;
+    }
 }
 
 .content {
   display: flex;
+
+  @media only screen and (max-width: $bp-medium) {
+    flex-direction: column;
+  }
 }
 
 .sidebar{
   background-color: var(--grey-dark-1);
   flex: 0 0 18%;
+
+  display: flex;
+  flex-direction:column;
+  justify-content: space-between;
 }
 
 .hotel-view {
   background-color: #fff;
-  background-color: orangered;
+
   // flex: 1;
-  flex-grow: 1;
+  flex-grow: 1; // to take up rest of width of container
 }
 
+.detail {
+  font-size: 1.4rem; // all child elements should inherit
+  display: flex;
+  padding: 4.5rem;
+  background-color: var(--grey-light-1);
+  border-bottom: var(--line);
+
+  @media only screen and (max-width: $bp-medium) {
+    padding: 3rem;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    flex-direction: column;
+  }
+
+}
+
+.description {
+  background-color: #fff;
+  box-shadow: var(--shadow-light);
+  padding: 3rem;
+  flex: 0 0 60%;
+  margin-right: 4.5rem; // to match space between .description and .user-reviews with the padding in .detail
+
+  @media only screen and (max-width: $bp-medium) {
+    padding: 2rem;
+    margin-right: 3rem;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    margin-right: 0;
+    margin-bottom: 3rem;
+  }
+}
+
+.user-reviews {
+  flex: 1; // to occupy all the remaining space (40%)
+  display: flex;
+  flex-direction: column;
+  // justify-content: center; // not necessary
+  align-items: center;
+}
 
